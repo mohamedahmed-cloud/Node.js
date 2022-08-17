@@ -1,6 +1,10 @@
-const amount=19
-if (amount>12){
-    console.log("Big Number")
-}else
-    console.log("Small number")
-console.log("Hello from my first app ")
+const names = require('./2.names')
+const sayHi = require('./3.function')
+const extra=require('./4.extra')
+const function2=require('./5.function2')
+
+
+sayHi("mohamed")
+sayHi(names.aya)
+sayHi(names.sara)
+console.log(extra)

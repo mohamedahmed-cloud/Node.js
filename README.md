@@ -31,7 +31,7 @@
 |Fragmentation |version|
 |ES6 Modules | common JS|
 
-- Vanilla js is the pure js file without any framework also called `plain js` and `core js`
+- `Vanilla js` is the pure js file without any using framework also called `plain js` and `core js`
 - Ways to run js code directly
   - From make html file and js file then run it on broswer
   
@@ -48,5 +48,61 @@
 - `require` => function to use modules `common js`
 - `module` => info about current module (file)
 - `process` => info about env where the program is being executed
-- 
+---
+### modules
+- we can split our code files as many as we want but we notice a problem that we can't run more than one file at a time so we use module to handle this 
+- Notes `next three block of code are sparately `
+    ```js
+    //sub file number one called "2.names"
+    // secret
+    const secret='f'
+    // share
+    const aya='aya'
+    const sara='sara'
+    // console.log(module)
+    module.exports = {aya,sara}
+    ```
+    ```js
+    //sub file number two called "3.function"
+    const sayHi=(name)=>{
+    console.log(`hello ${name}`)
+    }
+    module.exports =sayHi
+    ```
+    ```js
+    //sub file number three called "4.extra"
+    //Note when you export varible or funcition  like file number one differece when you export list or object
+    module.exports.item=['mohamed','ahmed']
+    const myObject={
+        name :'mohamed',
+        age : 21,
+    }
+    module.exports.my=myObject
+    ```
+    ```js
+    //This is differnce from function in file two this executed commands in it when you invoke it in main file
+    function printme(){
+    console.log("MOhamed Ahmed Yousef")
+    }
+    printme()
+    ```
 
+    ```js
+    //main file that will run 
+    const names = require('./2.names')
+    const sayHi = require('./3.function')
+    const extra=require('./4.extra')
+   //This function executed without make 'console.log() for it ' 
+    require('./5.function2')
+
+    sayHi("mohamed")
+    sayHi(names.aya)
+    sayHi(names.sara)
+    console.log(extra)
+    ```
+---
+### Built In Modules
+- [ ] OS
+- [ ] PATH
+- [ ] FS
+- [ ] HTTP
