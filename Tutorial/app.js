@@ -1,10 +1,6 @@
-const names = require('./2.names')
-const sayHi = require('./3.function')
-const extra=require('./4.extra')
-const function2=require('./5.function2')
+const path = require("path");
 
 
-sayHi("mohamed")
-sayHi(names.aya)
-sayHi(names.sara)
-console.log(extra)
+// return the absolute path 
+const absolute=path.resolve(__dirname, 'content','subfolder','test.txt');
+console.log(absolute)

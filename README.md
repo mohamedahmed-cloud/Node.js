@@ -102,7 +102,71 @@
     ```
 ---
 ### Built In Modules
-- [ ] OS
+- [ ] OS => Operation system module
 - [ ] PATH
-- [ ] FS
-- [ ] HTTP
+- [ ] FS => File System module
+- [ ] HTTP => To set up `http server`
+---
+#### OS Module
+- import os module
+    ```js
+    //import the module
+    const os=require("os");
+    ```
+- get info about current user name
+    ```js
+    // info about current user
+    const os=require("os");
+    const user=os.userInfo();
+    console.log(user)
+    ```
+- get the uptime for OS 
+
+    ```js
+    // method return system uptime in second
+    const time=os.uptime();
+    console.log(`my computer run for ${time} second`)
+    ```
+- get Info about OS 
+```js
+    // infor about my os
+    const currentOS={
+        name:os.type(),
+        release:os.release(),
+        totalMem:os.totalmem(),
+        freeMem:os.freemem()
+    }
+    console.log(currentOS)
+```
+---
+### Path Module
+- help us to interact with file path easily
+- import the module 
+    ```js
+    const path = require("path");
+    ```
+- type slash
+    ```js
+    const path = require("path");
+    // Type the forward slash
+    console.log(path.sep);
+    ```
+- Find the `path of the file` and `end of the path`
+    ```js
+    onst path = require("path");
+
+    // Find the path of the file
+    const filePath = path.join("/content", "subfolder", "test.txt");
+    console.log(filePath);
+
+    // Return the end of the filePath
+    const base=path.basename(filePath);
+    console.log(base)
+    ```
+- Return the absolute path of the file
+    ```js
+    const path = require("path");
+    // return the absolute path 
+    const absolute=path.resolve(__dirname, 'content','subfolder','test.txt');
+    console.log(absolute)
+    ```
